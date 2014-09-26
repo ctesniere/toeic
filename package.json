@@ -1,0 +1,25 @@
+{
+    "name": "toeic",
+    "version": "0.0.0",
+    "description": "asd",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/ctesniere/Toeic.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ctesniere/Toeic/issues"
+    },
+    "homepage": "https://github.com/ctesniere/Toeic",
+    "dependencies": {
+        "angular": "^1.2.23",
+        "angular-bootstrap": "^0.11.0",
+        "angular-route": "^1.2.17",
+        "bootstrap": "^3.2.0"
+    }
+}

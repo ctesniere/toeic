@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" ng-app="todomvc" data-framework="angularjs">
+<head>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="toeic">
+    <meta name="author" content="ctesniere">
+    <title>TOEIC</title>
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/cover.css" rel="stylesheet">
+</head>
+<body>
+<div class="site-wrapper" ng-controller="ToeicCtrl">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand">TOEIC</h3>
+                    <ul class="nav masthead-nav">
+                        <li class="active"><a href="#">Preposition</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="showPt">
+                {{point}} pt
+            </div>
+            <div class="inner cover">
+                <h1 class="cover-heading">
+                    {{nameOfPreposition.word}}
+                </h1>
+                <span class="lead" ng-repeat="preposition in prepositions track by $index">
+                    <a href="#" class="btn btn-lg btn-default" ng-click="valide(preposition)" id="{{preposition}}"
+                       class="preposition">{{preposition}}</a>
+                </span>
+            </div>
+            <br/>
+
+            <div class="leadP">
+                {{utils.mySplit(lastWordAndPrep.word,0)}} <span style="color:#A94442">{{lastWordAndPrep.preposition}}</span>
+                {{utils.mySplit(lastWordAndPrep.word,1)}}
+            </div>
+        </div>
+    </div>
+</div>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/ToeicCtrl.js"></script>
+<script src="js/services/services.js"></script>
+<script src="js/services/wordStorage.js"></script>
+</body>
+</html>

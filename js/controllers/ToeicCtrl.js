@@ -1,6 +1,9 @@
 'use strict';
 
-app.controller('ToeicCtrl', function ToeicCtrl($scope, $location, $filter, $http, API, arrayUtils, utils, profile) {
+app.controller('ToeicCtrl', function ToeicCtrl($scope, $location, $filter, $http, $window, API, arrayUtils, utils, profile) {
+    var numberOfErrorForShowReponse = 1;
+
+    $window.console.log("ToeicCtrl");
     $scope.utils = utils;
 
     $scope.listWord = [];
@@ -11,8 +14,9 @@ app.controller('ToeicCtrl', function ToeicCtrl($scope, $location, $filter, $http
     $scope.numberOfErrorsInThisRound = 0;
 
     $scope.init = function () {
+        console.log("init");
         API.get().success(function (data) {
-            angular.forEach(data.list_word, function (value, key) {
+            angular.forEach(data.list_word, function (value) {
                 angular.forEach(value.preposition, function (value, key) {
                     $scope.listWord.push({word: key, preposition: value});
                 });
@@ -24,8 +28,9 @@ app.controller('ToeicCtrl', function ToeicCtrl($scope, $location, $filter, $http
     };
 
     $scope.valide = function (preposition) {
-        var element = document.getElementById(preposition);
-        if (preposition == $scope.nameOfPreposition.preposition) {
+        var element = $window.document.getElementById(preposition);
+
+        if (preposition === $scope.nameOfPreposition.preposition) {
             element.style.backgroundColor = profile.colorRed;
 
             $scope.lastWordAndPrep = $scope.nameOfPreposition;
@@ -37,6 +42,9 @@ app.controller('ToeicCtrl', function ToeicCtrl($scope, $location, $filter, $http
         } else {
             $scope.numberOfErrorsInThisRound++;
             element.style.backgroundColor = profile.colorRed;
+            if ($scope.numberOfErrorsInThisRound == numberOfErrorForShowReponse) {
+                utils.allbackgroundColorRed($scope.prepositions, $scope.nameOfPreposition.preposition);
+            }
         }
     };
 

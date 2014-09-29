@@ -1,3 +1,17 @@
-'use strict';
+var app = angular.module('app', ['ngRoute','ui.bootstrap']);
 
-var app = angular.module('todomvc', ['ui.bootstrap']);
+app.config(['$routeProvider',
+    function($routeProvider) {
+        $routeProvider.
+            when('/', {
+                templateUrl: 'partials/accueil.html',
+                controller: 'AccueilCtrl'
+            }).
+            when('/Preposition', {
+                templateUrl: 'partials/preposition-exo.html',
+                controller: 'ToeicCtrl'
+            }).
+            otherwise({
+                redirectTo: '/'
+            });
+    }]);

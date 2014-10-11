@@ -1,54 +1,557 @@
 {
     "name": "module-name",
     "version": "0.1",
-    "prepositions": {"list": ["at", "by", "for", "from", "in", "of", "on", "to", "with"]},
+    "prepositions": {
+        "list": ["at", "by", "for", "from", "in", "of", "on", "to", "with"]
+    },
     "list_word": [
-        {"word": "appointment", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"appointment __": "with"}},
-        {"word": "approach", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"approach __": "to"}},
-        {"word": "cause", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"cause__": "of"}},
-        {"word": "combination", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"approach __": "of"}},
-        {"word": "contribution", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"contribution __": "to"}},
-        {"word": "cure", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"cure __": "for"}},
-        {"word": "decrease", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"decrease __": "in"}},
-        {"word": "demand", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"demand __": "for"}},
-        {"word": "development", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"development __ (a field)": "in", "development __ (something)": "of"}},
-        {"word": "effect", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"effect __ (something that affects)": "of", "effect __ (the thing affected)": "on"}},
-        {"word": "example", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"example __": "of"}},
-        {"word": "exception", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"exception __": "to"}},
-        {"word": "experience", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"experience __ (a field)": "in", "experience __ (something)": "with"}},
-        {"word": "idea", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"idea __": "for"}},
-        {"word": "impact", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"impact __": "on"}},
-        {"word": "improvement", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"improvement __": "in"}},
-        {"word": "increase", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"increase __": "in"}},
-        {"word": "influence", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"influence __": "on"}},
-        {"word": "interest", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"interest __": "in"}},
-        {"word": "native", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"native __": "of"}},
-        {"word": "part", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"part __": "of"}},
-        {"word": "participation", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"participation __": "in"}},
-        {"word": "price", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"price __": "of"}},
-        {"word": "probability", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"probability __": "of"}},
-        {"word": "problem", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"problem __": "with"}},
-        {"word": "process", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"process __": "of"}},
-        {"word": "quality", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"quality __": "of"}},
-        {"word": "reliance", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"reliance __": "on"}},
-        {"word": "resuit", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"resuit __": "of"}},
-        {"word": "rules", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"rules __ (doing something)": "for", "rules __ (a game)": "of"}},
-        {"word": "satisfaction", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"satisfaction __": "with"}},
-        {"word": "search", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"search __": "for"}},
-        {"word": "solution", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"solution __": "to"}},
-        {"word": "source", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"source __": "of"}},
-        {"word": "supply", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"supply __": "of"}},
-        {"word": "variety", "translate": [], "synonyme": [], "type": ["nouns"], "category": [], "preposition": {"variety __": "of"}},
-        {"word": "accustomed", "translate": [], "synonyme": [], "type": ["adjectives", "participle"], "category": [], "preposition": { "accustomed __": "to" }},
-        {"word": "acquainted", "translate": [], "synonyme": [], "type": ["adjectives", "participle"], "category": [], "preposition": { "acquainted __": "with" }},
-        {"word": "afraid", "translate": [], "synonyme": [], "type": ["adjectives", "participle"], "category": [], "preposition": { "afraid __": "of" }},
-        {"word": "angry", "translate": [], "synonyme": [], "type": ["adjectives", "participle"], "category": [], "preposition": { "angry __ (something or someone)": "at", "angry __ (someone)": "with" }},
-        {"word": "attached", "translate": [], "synonyme": [], "type": ["adjectives", "participle"], "category": [], "preposition": { "attached __": "to" }},
-        {"word": "aware", "translate": [], "synonyme": [], "type": ["adjectives", "participle"], "category": [], "preposition": { "aware __": "of" }},
-        {"word": "based", "translate": [], "synonyme": [], "type": ["adjectives", "participle"], "category": [], "preposition": { "based __": "on" }},
-        {"word": "capable", "translate": [], "synonyme": [], "type": ["adjectives", "participle"], "category": [], "preposition": { "capable __": "of" }},
-        {"word": "close", "translate": [], "synonyme": [], "type": ["adjectives", "participle"], "category": [], "preposition": { "close __": "to" }},
-        {"word": "dependent", "translate": [], "synonyme": [], "type": ["adjectives", "participle"], "category": [], "preposition": { "dependent __": "on" }},
-        {"word": "different", "translate": [], "synonyme": [], "type": ["adjectives", "participle"], "category": [], "preposition": { "different __": "from" }}
+        {
+            "word": "appointment",
+            "translate": {
+                "an appointment with": "un rendez-vous avec"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "an appointment __": "with"
+            }
+        },
+        {
+            "word": "approach",
+            "translate": {
+                "the approach to": "l'approche de"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the approach __": "to"
+            }
+        },
+        {
+            "word": "cause",
+            "translate": {
+                "the cause of": "la cause de"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the cause__": "of"
+            }
+        },
+        {
+            "word": "combination",
+            "translate": {
+                "a combination of": "une combinaison de"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "a combination __": "of"
+            }
+        },
+        {
+            "word": "contribution",
+            "translate": {
+                "the contribution to": "la contribution à"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the contribution __": "to"
+            }
+        },
+        {
+            "word": "cure",
+            "translate": {
+                "the cure for": "le remède contre"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the cure __": "for"
+            }
+        },
+        {
+            "word": "decrease",
+            "translate": {
+                "the decrease in": "la baisse de"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the decrease __": "in"
+            }
+        },
+        {
+            "word": "demand",
+            "translate": {
+                "the demand for": "la demande pour"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the demand __": "for"
+            }
+        },
+        {
+            "word": "development",
+            "translate": {
+                "the development in (a field)": "le développement dans (un domaine)",
+                "the development of (something)": "le développement de (qq chose)"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the development __ (a field)": "in",
+                "the development __ (something)": "of"
+            }
+        },
+        {
+            "word": "effect",
+            "translate": {
+                "the effect of (something that affects)": "l'effet de (qq chose)",
+                "effect on (the thing affected)": "l'effet sur"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the effect __ (something that affects)": "of",
+                "effect __ (the thing affected)": "on"
+            }
+        },
+        {
+            "word": "example",
+            "translate": {
+                "an example of": "un exemple de"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "an example __": "of"
+            }
+        },
+        {
+            "word": "exception",
+            "translate": {
+                "the exception to": "l'exception à"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the exception __": "to"
+            }
+        },
+        {
+            "word": "experience",
+            "translate": {
+                "an experience in (a field)": "une expérience dans (un domaine)",
+                "an experience with (something)": "une expérience (en lien) avec"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "an experience __ (a field)": "in",
+                "an experience __ (something)": "with"
+            }
+        },
+        {
+            "word": "idea",
+            "translate": {
+                "the idea for": "l'idée de/pour"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the idea __": "for"
+            }
+        },
+        {
+            "word": "impact",
+            "translate": {
+                "the impact on": "l'impact sur"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the impact __": "on"
+            }
+        },
+        {
+            "word": "improvement",
+            "translate": {
+                "the improvement": "l'amélioration de"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the improvement __": "in"
+            }
+        },
+        {
+            "word": "increase",
+            "translate": {
+                "the increase in": "l'augmentation de"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the increase __": "in"
+            }
+        },
+        {
+            "word": "influence",
+            "translate": {
+                "the influence on": "l'influence sur"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the influence __": "on"
+            }
+        },
+        {
+            "word": "interest",
+            "translate": {
+                "the interest in": "l'intérêt pour"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the interest __": "in"
+            }
+        },
+        {
+            "word": "native",
+            "translate": {
+                "a native of": "un natif de"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "a native __": "of"
+            }
+        },
+        {
+            "word": "part",
+            "translate": {
+                "the part of": "la partie de"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the part __": "of"
+            }
+        },
+        {
+            "word": "participation",
+            "translate": {
+                "the participation in": "la participation dans"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the participation __": "in"
+            }
+        },
+        {
+            "word": "price",
+            "translate": {
+                "the price of": "le prix de"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the price __": "of"
+            }
+        },
+        {
+            "word": "probability",
+            "translate": {
+                "the probability of": "la probabilité de"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the probability __": "of"
+            }
+        },
+        {
+            "word": "problem",
+            "translate": {
+                "a problem with": "un problème avec"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "a problem __": "with"
+            }
+        },
+        {
+            "word": "process",
+            "translate": {
+                "the process of": "le processus de"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the process __": "of"
+            }
+        },
+        {
+            "word": "quality",
+            "translate": {
+                "the quality of": "la qualité de"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the quality __": "of"
+            }
+        },
+        {
+            "word": "reliance",
+            "translate": {
+                "the reliance on": "la dépendance vis-à-vis de"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the reliance __": "on"
+            }
+        },
+        {
+            "word": "resuit",
+            "translate": {},
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "resuit __": "of"
+            }
+        },
+        {
+            "word": "rules",
+            "translate": {
+                "the rules of (a game)": "les règles de (qq chose)"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "rules __ (doing something)": "for",
+                "the rules __ (a game)": "of"
+            }
+        },
+        {
+            "word": "satisfaction",
+            "translate": {
+                "the satisfaction with": "la satisfaction vis-à-vis de / envers"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the satisfaction __": "with"
+            }
+        },
+        {
+            "word": "search",
+            "translate": {
+                "the search for": "la quête / la recherche de"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the search __": "for"
+            }
+        },
+        {
+            "word": "solution",
+            "translate": {
+                "the solution to": "la solution à"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the solution __": "to"
+            }
+        },
+        {
+            "word": "source",
+            "translate": {
+                "the source of": "la source de"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the source __": "of"
+            }
+        },
+        {
+            "word": "supply",
+            "translate": {
+                "the supply of": "la fourniture / l'offre de"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the supply __": "of"
+            }
+        },
+        {
+            "word": "variety",
+            "translate": {
+                "the variety of": "la variété de"
+            },
+            "synonyme": {},
+            "type": ["nouns"],
+            "category": {},
+            "preposition": {
+                "the variety __": "of"
+            }
+        },
+        {
+            "word": "accustomed",
+            "translate": {},
+            "synonyme": {},
+            "type": ["adjectives/participle"],
+            "category": {},
+            "preposition": {
+                "accustomed __": "to"
+            }
+        },
+        {
+            "word": "acquainted",
+            "translate": {},
+            "synonyme": {},
+            "type": ["adjectives/participle"],
+            "category": {},
+            "preposition": {
+                "acquainted __": "with"
+            }
+        },
+        {
+            "word": "afraid",
+            "translate": {},
+            "synonyme": {},
+            "type": ["adjectives/participle"],
+            "category": {},
+            "preposition": {
+                "afraid __": "of"
+            }
+        },
+        {
+            "word": "angry",
+            "translate": {},
+            "synonyme": {},
+            "type": ["adjectives/participle"],
+            "category": {},
+            "preposition": {
+                "angry __ (something or someone)": "at",
+                "angry __ (someone)": "with"
+            }
+        },
+        {
+            "word": "attached",
+            "translate": {},
+            "synonyme": {},
+            "type": ["adjectives/participle"],
+            "category": {},
+            "preposition": {
+                "attached __": "to"
+            }
+        },
+        {
+            "word": "aware",
+            "translate": {},
+            "synonyme": {},
+            "type": ["adjectives/participle"],
+            "category": {},
+            "preposition": {
+                "aware __": "of"
+            }
+        },
+        {
+            "word": "based",
+            "translate": {},
+            "synonyme": {},
+            "type": ["adjectives/participle"],
+            "category": {},
+            "preposition": {
+                "based __": "on"
+            }
+        },
+        {
+            "word": "capable",
+            "translate": {},
+            "synonyme": {},
+            "type": ["adjectives/participle"],
+            "category": {},
+            "preposition": {
+                "capable __": "of"
+            }
+        },
+        {
+            "word": "close",
+            "translate": {},
+            "synonyme": {},
+            "type": ["adjectives/participle"],
+            "category": {},
+            "preposition": {
+                "close __": "to"
+            }
+        },
+        {
+            "word": "dependent",
+            "translate": {},
+            "synonyme": {},
+            "type": ["adjectives/participle"],
+            "category": {},
+            "preposition": {
+                "dependent __": "on"
+            }
+        },
+        {
+            "word": "different",
+            "translate": {},
+            "synonyme": {},
+            "type": ["adjectives/participle"],
+            "category": {},
+            "preposition": {
+                "different __": "from"
+            }
+        }
     ]
 }

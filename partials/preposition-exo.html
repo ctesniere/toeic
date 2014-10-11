@@ -1,17 +1,18 @@
 
 <div class="inner cover">
     <div class="showPt">
-        {{point}} pt
+        {{round.point}} pt
     </div>
     <h2 class="cover-heading">
-        {{nameOfPreposition.word}}
+        {{round.wordObj.word}}
     </h2>
     <span class="lead" ng-repeat="preposition in prepositions track by $index">
         <a class="btn btn-lg btn-default preposition" ng-click="valide(preposition)" id="{{preposition}}">{{preposition}}</a>
     </span>
 </div>
 
-<div class=""><h1>
-    {{utils.mySplit(lastWordAndPrep.word,0)}} <span style="color:#A94442">{{lastWordAndPrep.preposition}}</span>
-    {{utils.mySplit(lastWordAndPrep.word,1)}}
-</h1></div>
+<div>
+    <h1>{{utils.mySplit(lastRound.wordObj.word,0)}}
+        <span style="color:#A94442">{{lastRound.wordObj.preposition}}</span> {{utils.mySplit(lastRound.wordObj.word,1)}}</h1>
+    <h2>{{lastRound.translate}}</h2>
+</div>

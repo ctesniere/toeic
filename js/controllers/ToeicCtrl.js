@@ -1,51 +1,77 @@
 'use strict';
 
 app.controller('ToeicCtrl', function ToeicCtrl($scope, $location, $filter, $http, $window, API, arrayUtils, utils, profile) {
-    var numberOfErrorForShowReponse = 1;
-
-    $window.console.log("ToeicCtrl");
     $scope.utils = utils;
 
-    $scope.listWord = [];
-    $scope.nameOfPreposition = '';
+    $scope.words = [];
+    $scope.translates = [];
     $scope.prepositions = [];
-    $scope.lastWordAndPrep = [];
-    $scope.point = 0;
-    $scope.numberOfErrorsInThisRound = 0;
+    $scope.round = {
+        point: 0,
+        wordObj: '',
+        numberErrors: 0
+    };
+    $scope.lastRound = {
+        wordObj: '',
+        translate: ''
+    };
+    $scope.wordFound = '';
+
+    $scope.reset = function () {
+        $scope.prepositions = arrayUtils.shuffle($scope.prepositions);
+        $scope.round.wordObj = arrayUtils.shuffle($scope.words)[0];
+        utils.resetBackgroundColor($scope.prepositions);
+    };
 
     $scope.init = function () {
-        console.log("init");
         API.get().success(function (data) {
-            angular.forEach(data.list_word, function (value) {
-                angular.forEach(value.preposition, function (value, key) {
-                    $scope.listWord.push({word: key, preposition: value});
+            if ($scope.words.length == 0) {
+                $scope.words = [];
+                angular.forEach(data.list_word, function (words) {
+                    angular.forEach(words.preposition, function (value, key) {
+                        $scope.words.push({word: key, preposition: value});
+                    });
+                    angular.forEach(words.translate, function (value, key) {
+                        $scope.translates.push({word: key, translate: value});
+                    });
                 });
-            });
-            $scope.prepositions = arrayUtils.shuffle(data.prepositions.list);
-            $scope.nameOfPreposition = arrayUtils.shuffle($scope.listWord)[0];
-            utils.resetBackgroundColor($scope.prepositions);
+                $scope.prepositions = data.prepositions.list;
+                $scope.reset();
+            }
         });
     };
 
     $scope.valide = function (preposition) {
         var element = $window.document.getElementById(preposition);
 
-        if (preposition === $scope.nameOfPreposition.preposition) {
+        if (preposition === $scope.round.wordObj.preposition) {
             element.style.backgroundColor = profile.colorRed;
 
-            $scope.lastWordAndPrep = $scope.nameOfPreposition;
-            if ($scope.numberOfErrorsInThisRound < 1) {
-                $scope.point = $scope.point + 1;
+            if ($scope.round.numberErrors < 1) {
+                $scope.round.point++;
             }
-            $scope.numberOfErrorsInThisRound = 0;
-            $scope.init();
+            $scope.round.numberErrors = 0;
+            $scope.lastRound.wordObj = $scope.round.wordObj;
+            $scope.wordFound = $scope.lastRound.wordObj.word.replace('__', preposition);
+            $scope.lastRound.translate = $scope.getTranslate($scope.wordFound);
+            $scope.reset();
         } else {
-            $scope.numberOfErrorsInThisRound++;
+            $scope.round.numberErrors++;
             element.style.backgroundColor = profile.colorRed;
-            if ($scope.numberOfErrorsInThisRound == numberOfErrorForShowReponse) {
-                utils.allbackgroundColorRed($scope.prepositions, $scope.nameOfPreposition.preposition);
+            if ($scope.round.numberErrors == 1) {
+                utils.allbackgroundColorRed($scope.prepositions, $scope.round.wordObj.preposition);
             }
         }
+    };
+
+    $scope.getTranslate = function (word) {
+        var valueReturn = '';
+        angular.forEach($scope.translates, function (value) {
+            if (value.word == word) {
+                valueReturn = value.translate;
+            }
+        });
+        return valueReturn;
     };
 
     $scope.init();

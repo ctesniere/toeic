@@ -3,27 +3,33 @@
 app.controller('ToeicCtrl', function ToeicCtrl($scope, $location, $filter, $http, $window, API, arrayUtils, utils, profile) {
     var numberOfErrorForShowReponse = 1;
 
-    $window.console.log("ToeicCtrl");
     $scope.utils = utils;
 
-    $scope.listWord = [];
+    $scope.words = [];
     $scope.nameOfPreposition = '';
     $scope.prepositions = [];
     $scope.lastWordAndPrep = [];
     $scope.point = 0;
     $scope.numberOfErrorsInThisRound = 0;
 
+    $scope.reset = function () {
+        $scope.prepositions = arrayUtils.shuffle($scope.prepositions);
+        $scope.nameOfPreposition = arrayUtils.shuffle($scope.words)[0];
+        utils.resetBackgroundColor($scope.prepositions);
+    };
+
     $scope.init = function () {
-        console.log("init");
         API.get().success(function (data) {
-            angular.forEach(data.list_word, function (value) {
-                angular.forEach(value.preposition, function (value, key) {
-                    $scope.listWord.push({word: key, preposition: value});
+            if ($scope.words.length == 0) {
+                $scope.words = [];
+                angular.forEach(data.list_word, function (words) {
+                    angular.forEach(words.preposition, function (value, key) {
+                        $scope.words.push({word: key, preposition: value});
+                    });
                 });
-            });
-            $scope.prepositions = arrayUtils.shuffle(data.prepositions.list);
-            $scope.nameOfPreposition = arrayUtils.shuffle($scope.listWord)[0];
-            utils.resetBackgroundColor($scope.prepositions);
+                $scope.prepositions = data.prepositions.list;
+                $scope.reset();
+            }
         });
     };
 
@@ -38,7 +44,7 @@ app.controller('ToeicCtrl', function ToeicCtrl($scope, $location, $filter, $http
                 $scope.point = $scope.point + 1;
             }
             $scope.numberOfErrorsInThisRound = 0;
-            $scope.init();
+            $scope.reset();
         } else {
             $scope.numberOfErrorsInThisRound++;
             element.style.backgroundColor = profile.colorRed;

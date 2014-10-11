@@ -7,8 +7,7 @@
         {{nameOfPreposition.word}}
     </h2>
     <span class="lead" ng-repeat="preposition in prepositions track by $index">
-        <a class="btn btn-lg btn-default" ng-click="valide(preposition)" id="{{preposition}}"
-           class="preposition">{{preposition}}</a>
+        <a class="btn btn-lg btn-default preposition" ng-click="valide(preposition)" id="{{preposition}}">{{preposition}}</a>
     </span>
 </div>
 

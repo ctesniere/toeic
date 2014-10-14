@@ -9,7 +9,14 @@ app.config(['$routeProvider',
             }).
             when('/Preposition', {
                 templateUrl: 'partials/preposition-exo.html',
-                controller: 'ToeicCtrl'
+                controller: 'PrepositionExoCtrl',
+                resolve: {
+                    dataFile: ['dataFileSrvc',
+                        function(dataFileSrvc) {
+                            return dataFileSrvc.fetchDataFile();
+                        }
+                    ]
+                }
             }).
             otherwise({
                 redirectTo: '/'

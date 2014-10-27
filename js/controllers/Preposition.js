@@ -1,18 +1,16 @@
 'use strict';
 
-app.controller('ToeicCtrl', function ToeicCtrl($scope, $location, $filter, $http, $window, API, arrayUtils, utils, profile) {
-    $scope.utils = utils;
-
+app.controller('PrepositionExoCtrl', function ToeicCtrl($scope, $location, $filter, $http, $window, dataFile, dataFileSrvc, profile, arrayUtils, stringsUtils) {
     $scope.words = [];
     $scope.translates = [];
     $scope.prepositions = [];
     $scope.round = {
         point: 0,
-        wordObj: '',
+        wordObj: {},
         numberErrors: 0
     };
     $scope.lastRound = {
-        wordObj: '',
+        wordObj: {},
         translate: ''
     };
     $scope.wordFound = '';
@@ -20,25 +18,14 @@ app.controller('ToeicCtrl', function ToeicCtrl($scope, $location, $filter, $http
     $scope.reset = function () {
         $scope.prepositions = arrayUtils.shuffle($scope.prepositions);
         $scope.round.wordObj = arrayUtils.shuffle($scope.words)[0];
-        utils.resetBackgroundColor($scope.prepositions);
+        stringsUtils.resetBackgroundColor($scope.prepositions);
     };
 
     $scope.init = function () {
-        API.get().success(function (data) {
-            if ($scope.words.length == 0) {
-                $scope.words = [];
-                angular.forEach(data.list_word, function (words) {
-                    angular.forEach(words.preposition, function (value, key) {
-                        $scope.words.push({word: key, preposition: value});
-                    });
-                    angular.forEach(words.translate, function (value, key) {
-                        $scope.translates.push({word: key, translate: value});
-                    });
-                });
-                $scope.prepositions = data.prepositions.list;
-                $scope.reset();
-            }
-        });
+        $scope.translates = dataFileSrvc.getTranslates();
+        $scope.words = dataFileSrvc.getWords();
+        $scope.prepositions = dataFile.prepositions.list;
+        $scope.reset();
     };
 
     $scope.valide = function (preposition) {
@@ -59,14 +46,14 @@ app.controller('ToeicCtrl', function ToeicCtrl($scope, $location, $filter, $http
             $scope.round.numberErrors++;
             element.style.backgroundColor = profile.colorRed;
             if ($scope.round.numberErrors == 1) {
-                utils.allbackgroundColorRed($scope.prepositions, $scope.round.wordObj.preposition);
+                stringsUtils.allbackgroundColorRed($scope.prepositions, $scope.round.wordObj.preposition);
             }
         }
     };
 
     $scope.getTranslate = function (word) {
         var valueReturn = '';
-        angular.forEach($scope.translates, function (value) {
+        angular.forEach(dataFileSrvc.getTranslates(), function (value) {
             if (value.word == word) {
                 valueReturn = value.translate;
             }

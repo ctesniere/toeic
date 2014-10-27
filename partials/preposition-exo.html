@@ -12,7 +12,7 @@
 </div>
 
 <div>
-    <h1>{{utils.mySplit(lastRound.wordObj.word,0)}}
-        <span style="color:#A94442">{{lastRound.wordObj.preposition}}</span> {{utils.mySplit(lastRound.wordObj.word,1)}}</h1>
+    <h1>{{lastRound.wordObj.word.split('__')[0]}}
+        <span style="color:#A94442">{{lastRound.wordObj.preposition}}</span> {{lastRound.wordObj.word.split('__')[1]}}</h1>
     <h2>{{lastRound.translate}}</h2>
 </div>
